@@ -1,8 +1,4 @@
-const express = require('express');
 const app = require('./app');
-
-// const app = express();
-// app.use(express.json());
 
 const HTTP_OK_STATUS = 200;
 const PORT = process.env.PORT || '3001';
