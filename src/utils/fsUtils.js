@@ -6,7 +6,7 @@ const readTalkers = async () => {
   const allTalkers = JSON.parse(data);
   return allTalkers;
 };
-
+// alterando pra testar linter
 const getTalkerForId = async (id) => {
   const allTalkers = await readTalkers();
   const oradores = allTalkers.filter((palestrante) => palestrante.id === Number(id));
