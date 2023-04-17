@@ -7,4 +7,10 @@ const readTalkers = async () => {
   return allTalkers;
 };
 
-module.exports = { readTalkers };
+const getTalkerForId = async (id) => {
+  const allTalkers = await readTalkers();
+  const palestrante = allTalkers.filter(palestrante => palestrante.id === Number(id));
+  return palestrante;
+};
+
+module.exports = { readTalkers, getTalkerForId };
