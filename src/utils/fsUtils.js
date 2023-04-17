@@ -9,7 +9,7 @@ const readTalkers = async () => {
 
 const getTalkerForId = async (id) => {
   const allTalkers = await readTalkers();
-  const palestrante = allTalkers.filter(palestrante => palestrante.id === Number(id));
+  const palestrante = allTalkers.filter(palestrante => (palestrante.id === Number(id)));
   return palestrante;
 };
 
