@@ -20,10 +20,9 @@ talkersRouter.get('/:id', async (req, res) => {
     // Verifica se foi encontrado algum palestrante com o ID fornecido
     if (talkersDataId.length > 0) {
       return res.status(200).json(talkersDataId[0]); // Retorna o primeiro objeto do array
-    } {
+    }
       // Define a mensagem de erro quando nenhuma pessoa palestrante for encontrada
       return res.status(404).json({ message: 'Pessoa palestrante não encontrada' });
-    }
   });
   
   module.exports = talkersRouter;
