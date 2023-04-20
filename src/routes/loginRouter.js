@@ -1,12 +1,12 @@
 const express = require('express');
 const autenticacao = require('../utils/autenticacao');
+const { emailValidation, passwordValidation } = require('../utils/validacaoLogin');
 
 const autenticacaoLogin = express.Router();
 
-autenticacaoLogin.post('/', (req, res) => {
-    const autenticacao_tamanho = 16;
-    const { email, password } = req.body;
-    const token = autenticacao(autenticacao_tamanho);
+autenticacaoLogin.post('/', emailValidation, passwordValidation, (req, res) => {
+    const autenticacaoTamanho = 16;
+    const token = autenticacao(autenticacaoTamanho);
 
     res.status(200).json({ token });
 });
