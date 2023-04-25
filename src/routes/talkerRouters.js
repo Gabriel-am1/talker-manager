@@ -26,7 +26,6 @@
 //       return res.status(404).json({ message: 'Pessoa palestrante não encontrada' });
 //   });
 
-
 //   talkersRouter.post('/', validateToken, validateFieldsExistence, validateFieldsRules, async (req, res) => {
 //     const talker = req.body;
 
@@ -37,6 +36,3 @@
 //   });
   
 //   module.exports = talkersRouter;
-
-
-

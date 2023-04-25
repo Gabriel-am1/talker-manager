@@ -28,5 +28,4 @@
 //   return newId;
 // };
 
-
 // module.exports = { readTalkers, getTalkerForId, registerTalker };

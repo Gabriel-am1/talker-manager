@@ -1,4 +1,4 @@
-//dbUtils.js
+// dbUtils.js
 
 // const getNewId = (talkers) => {
 //     const idsArray = talkers.map(talker => talker.id);
