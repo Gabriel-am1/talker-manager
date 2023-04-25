@@ -1,11 +1,3 @@
-// const app = require('./app');
-
-// const PORT = process.env.PORT || '3001';
-
-// app.listen(PORT, () => {
-//   console.log('Online');
-// });
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const { 
@@ -39,8 +31,6 @@ editTalker,
 deleteTalker);
 
 app.use('/login', login);
-// app.use('/talker', editTalker);
-// app.use('/talker', deleteTalker);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);

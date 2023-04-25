@@ -22,10 +22,10 @@ const ageValidated = (req, res, next) => {
     });
   }
 
-  if (age < 18) {
+  if (age < 18 || !Number.isInteger(age)) {
     return res
       .status(400)
-      .json({ message: 'A pessoa palestrante deve ser maior de idade' });
+      .json({ message: 'O campo "age" deve ser um número inteiro igual ou maior que 18' });
   }
   next();
 };
@@ -34,11 +34,11 @@ const tokenValidated = (req, res, next) => {
   const { authorization } = req.headers;
   console.log(req.headers);
   if (!authorization) {
-    return res.status(400)
+    return res.status(401)
     .json({ message: 'Token não encontrado' });
   }
   if (authorization.length !== 16) {
-    return res.status(400)
+    return res.status(401)
     .json({ message: 'Token inválido' });
   }
   next();
@@ -77,9 +77,9 @@ const rateValidated = (req, res, next) => {
   const { talk: { rate }, 
 } = req.body;
 
-if (rate < 1 || rate > 5) {
+if (rate > 5 || rate < 1) {
   return res.status(400)
-  .json({ message: 'O campo "rate" deve ser um inteiro de 1 à 5',
+  .json({ message: 'O campo "rate" deve ser um número inteiro entre 1 e 5',
   });
 }  
   if (!rate) { 
