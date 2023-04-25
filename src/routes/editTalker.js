@@ -1,5 +1,4 @@
 const express = require('express');
-// const { StatusCodes } = require('http-status-codes');
 
 const fs = require('fs');
 
@@ -14,6 +13,7 @@ const {
   rateValidated,  
   dateValidated,
 } = require('../middleware'); 
+// const { personFound } = require('../middleware/talkerValidations');
 
 module.exports = router.put('/:id', 
 tokenValidated,
@@ -22,6 +22,7 @@ tokenValidated,
   talkValidated, 
   rateValidated,  
   dateValidated,
+  // personFound,
 async (req, res, next) => {  
   try {   
     const { id } = req.params;

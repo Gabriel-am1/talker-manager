@@ -77,17 +77,20 @@ const rateValidated = (req, res, next) => {
   const { talk: { rate }, 
 } = req.body;
 
-if (rate > 5 || rate < 1) {
+if (rate === undefined || rate === null) { 
+  return res.status(400)
+  .json({ message: 'O campo "rate" é obrigatório' });
+} 
+
+if (rate > 5 || rate <= 0 || !Number.isInteger(rate)) {
   return res.status(400)
   .json({ message: 'O campo "rate" deve ser um número inteiro entre 1 e 5',
   });
 }  
-  if (!rate) { 
-    return res.status(400)
-    .json({ message: 'O campo "rate" é obrigatório' });
-  } 
+ 
   next();
 };
+
 
 module.exports = {
   tokenValidated,
